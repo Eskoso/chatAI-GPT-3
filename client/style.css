@@ -1,0 +1,371 @@
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@100;300;400;500;700;800;900&display=swap");
+
+:root {
+  --background: 36, 36, 36;
+  --primary: 64, 65, 79;
+  --text: #dcdcdc;
+  --error: rgb(255, 48, 48);
+}
+
+.lightmode {
+  --background: #dcdcdc;
+  --primary: 58, 58, 58;
+  --text: #242424;
+  --error: rgb(255, 48, 48);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Alegreya Sans", sans-serif;
+}
+
+body {
+  background: rgb(var(--background));
+  display: flex;
+}
+
+.circle,
+.circle2,
+.circle3 {
+  width: 200px;
+  height: 200px;
+  position: fixed;
+  filter: blur(50px);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.circle {
+  background-color: #10a37f;
+  left: 70%;
+  bottom: 20%;
+  box-shadow: 0px 0px 40px #10a37f;
+  animation: circle 100s ease-in-out infinite;
+}
+
+.circle2 {
+  background-color: #8d18dbed;
+  right: 70%;
+  bottom: 15%;
+  box-shadow: 0px 0px 40px #9946d0;
+  animation: circle2 70s ease-in-out infinite;
+}
+
+.circle3 {
+  background-color: #b0c90f;
+  left: 35%;
+  top: 20%;
+  box-shadow: 0px 0px 40px #b0c90f;
+  animation: circle3 85s ease-in-out infinite;
+}
+
+@keyframes circle {
+  0% {
+    background-color: #10a37f;
+    transform: translate(0, 0);
+  }
+  25% {
+    background-color: #10a31c;
+    transform: translate(20%, 10%);
+  }
+  50% {
+    background-color: #a35010;
+    transform: translate(40%, -20%);
+  }
+  75% {
+    background-color: #a31061;
+    transform: translate(70%, 30%);
+  }
+  100% {
+    background-color: #10a37f;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes circle2 {
+  0% {
+    background-color: #8d18dbed;
+    transform: translate(0, 0);
+  }
+  25% {
+    background-color: #4918dbed;
+    transform: translate(30%, -40%);
+  }
+  50% {
+    background-color: #187adbed;
+    transform: translate(10%, 30%);
+  }
+  75% {
+    background-color: #32db18ed;
+    transform: translate(-50%, 20%);
+  }
+  100% {
+    background-color: #8d18dbed;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes circle3 {
+  0% {
+    background-color: #b0c90f;
+    transform: translate(0, 0);
+  }
+  25% {
+    background-color: #41c90f;
+    transform: translate(-90%, 70%);
+  }
+  50% {
+    background-color: #1badaa;
+    transform: translate(10%, -50%);
+  }
+  75% {
+    background-color: #581bad;
+    transform: translate(50%, 20%);
+  }
+  100% {
+    background-color: #b0c90f;
+    transform: translate(0, 0);
+  }
+}
+
+.sidebar {
+  width: 10vw;
+  height: 100vh;
+  background: rgb(var(--background), 0.8);
+}
+
+.sidebar .links {
+  padding: 10px 0;
+  list-style: none;
+  display: grid;
+  gap: 0.5rem;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.links .link .side-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  height: 100%;
+  width: 100%;
+  color: var(--text);
+  border-radius: 5px;
+  font-weight: 500;
+  height: 45px;
+}
+
+.links .link .side-btn i {
+  margin-left: 15px;
+  
+}
+
+.links .link .side-btn:hover {
+  background-color: rgba(var(--primary), 0.3);
+}
+
+#app {
+  width: 90vw;
+  height: 100vh;
+  background: rgba(var(--primary), 0.4);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#chat_container {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  padding-bottom: 20px;
+  scroll-behavior: smooth;
+}
+
+/* hides scrollbar */
+#chat_container::-webkit-scrollbar {
+  display: none;
+}
+
+.wrapper {
+  width: 100%;
+  padding: 25px;
+}
+
+.ai {
+  background: rgba(var(--primary), 0.3);
+}
+
+.chat {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.profile {
+  width: 36px;
+  height: 36px;
+  border-radius: 5px;
+
+  background: #5436da;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ai .profile {
+  background: #10a37f;
+}
+
+.profile img {
+  width: 60%;
+  height: 60%;
+  object-fit: contain;
+}
+
+.message {
+  flex: 1;
+
+  color: var(--text);
+  font-size: 20px;
+
+  max-width: 100%;
+  overflow-x: scroll;
+
+  /*
+   * white space refers to any spaces, tabs, or newline characters that are used to format the CSS code
+   * specifies how white space within an element should be handled. It is similar to the "pre" value, which tells the browser to treat all white space as significant and to preserve it exactly as it appears in the source code.
+   * The pre-wrap value allows the browser to wrap long lines of text onto multiple lines if necessary.
+   * The default value for the white-space property in CSS is "normal". This tells the browser to collapse multiple white space characters into a single space, and to wrap text onto multiple lines as needed to fit within its container.
+  */
+  white-space: pre-wrap;
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* hides scrollbar */
+.message::-webkit-scrollbar {
+  display: none;
+}
+
+form {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 10px;
+  background: rgba(var(--primary), 0);
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.textarea {
+  width: 100%;
+
+  color: var(--text);
+  font-size: 18px;
+
+  padding: 10px;
+  background: transparent;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  resize: none;
+  transition: background-color 200ms ease-in;
+  position: relative;
+}
+
+#user-chat:last-child{
+  color: #10a31c;
+}
+
+.textarea:focus {
+  background-color: rgb(var(--primary), .4);
+}
+
+.textarea:focus.textarea::placeholder{
+  color: var(--text);
+}
+
+.textarea.error{
+  border: 1px var(--error) solid;
+}
+
+.error__ico{
+  
+}
+
+.fa-solid.fa-circle-exclamation{
+  position: absolute;
+  transform: translate(-50%, -50%);
+  right: 75px;
+  color: var(--error);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 200ms ease-out;
+}
+
+.fa-solid.fa-circle-exclamation.error{
+  opacity: 100;
+  visibility: visible;
+}
+
+button{
+  outline: 1px transparent;
+  border: none;
+  cursor: pointer;
+  background: transparent; 
+  transition: background-color 100ms ease-in;
+}
+
+.send {
+  height: 100%; 
+  width: 40px;
+  color: var(--text);
+  border-radius: 5px;
+}
+
+.send i{
+  scale: 1.5;
+  transform: translate(-1px, 1px);
+}
+
+.send:hover{
+  background-color: rgb(var(--primary), .4);
+}
+
+@media only screen and (min-width: 1420px) {
+  .fa-solid.fa-circle-exclamation{
+    right: 7.5rem;
+  }
+}
+
+@media only screen and (min-width: 1700px) {
+  .fa-solid.fa-circle-exclamation{
+    right: 13.75rem;
+  }
+}

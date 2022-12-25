@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ask Codex AI</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+  <body>
+    <div class="circle"></div>
+    <div class="circle2"></div>
+    <div class="circle3"></div>
+    <nav class="sidebar">
+      <ul class="links">
+        <li class="link"><button class="side-btn" id="reset" ><i class="fa-solid fa-rotate-right"></i>Reset Thread</button></li>
+        <li class="link"><button class="side-btn" id="themeSwitcher"><i id="icon" class="fa-solid fa-sun"></i><span id="themeText">Light mode</span></button></li>
+        <!-- <li class="link"><button class="theme">Dark mode</button></li> -->
+        <!-- <li class="link"><button class="theme">Dark mode</button></li> -->
+      </ul>
+    </nav>
+    <div id="app">
+      <div id="chat_container"></div>
+      <form action="">
+          <textarea class="textarea" name="prompt" id="prompt" cols="1" rows="1" placeholder="Ask Codex..."></textarea>
+          <span><i id="erroricon" class="fa-solid fa-circle-exclamation"></i></span>
+        <button type="submit" class="send" id="send"><i class="fa-solid fa-paper-plane"></i></button>
+      </form>
+    </div>
+    <script type="module" src="/script.js"></script>
+  </body>
+</html>
